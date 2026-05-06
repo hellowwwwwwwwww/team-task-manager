@@ -1,8 +1,8 @@
 [phases.install]
-cmds = ["npm install --legacy-peer-deps"]
+cmds = ["npm install --legacy-peer-deps && chmod +x node_modules/.bin/react-scripts"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["./node_modules/.bin/react-scripts build"]
 
 [start]
 cmd = "npx serve -s build -l $PORT"
