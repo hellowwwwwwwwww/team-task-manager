@@ -2,15 +2,9 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN npm install --legacy-peer-deps
-
-RUN chmod +x /app/node_modules/.bin/react-scripts
-
 COPY . .
 
-RUN /app/node_modules/.bin/react-scripts build
+RUN npm install --legacy-peer-deps && chmod +x /app/node_modules/.bin/react-scripts && /app/node_modules/.bin/react-scripts build
 
 RUN npm install -g serve
 
