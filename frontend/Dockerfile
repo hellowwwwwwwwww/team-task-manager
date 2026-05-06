@@ -6,9 +6,11 @@ COPY package*.json ./
 
 RUN npm install --legacy-peer-deps
 
+RUN chmod +x /app/node_modules/.bin/react-scripts
+
 COPY . .
 
-RUN npx react-scripts build
+RUN /app/node_modules/.bin/react-scripts build
 
 RUN npm install -g serve
 
