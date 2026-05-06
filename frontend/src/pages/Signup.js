@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function Signup() {
@@ -7,14 +7,13 @@ export default function Signup() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { signup } = useAuth();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(''); setLoading(true);
     try {
       await signup(form.name, form.email, form.password, form.role);
-      navigate('/dashboard');
+      window.location.href = '/dashboard';
     } catch (err) {
       setError(err.response?.data?.error || 'Signup failed');
     } finally {
