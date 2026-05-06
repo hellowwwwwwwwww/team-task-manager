@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TaskFlow - Team Task Manager
 
 Full-stack task management app with role-based access, built with React + Node.js + PostgreSQL.
@@ -82,3 +83,6 @@ git push -u origin main
 - `POST /api/tasks/project/:projectId` - Create task
 - `PUT /api/tasks/:id` - Update task
 - `DELETE /api/tasks/:id` - Delete task
+=======
+# team-task-manager
+>>>>>>> d38a380e49c98755bbab6e9553fbec9e07e1c23d
