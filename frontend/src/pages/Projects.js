@@ -11,7 +11,7 @@ export default function Projects() {
 
   const fetchProjects = () => {
     projectAPI.getAll()
-      .then(res => setProjects(res.data))
+      .then(res => setProjects(Array.isArray(res.data) ? res.data : []))
       .catch(console.error)
       .finally(() => setLoading(false));
   };
